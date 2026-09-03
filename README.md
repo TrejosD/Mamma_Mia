@@ -10,7 +10,8 @@ https://trejosd.github.io/Mamma_Mia/
 
 ## Descripción
 
-La pagina muestra un landig page con tienda online, para una pizzeria.
+- La pagina muestra un landig page con tienda online, para una pizzeria.
+  **Menu de navegacion cambia dimanicamente, al hacer click en login o logout.**
 
 ## Tecnologías Utilizadas
 
