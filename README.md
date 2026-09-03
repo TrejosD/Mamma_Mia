@@ -1,16 +1,62 @@
-# React + Vite
+# Landing Page, Pizzeria Mamma Mia - React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Proyecto estatico, creado con React + Vite, landing page para una pizzeria.
 
-Currently, two official plugins are available:
+## Acceso
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```
+https://trejosd.github.io/Mamma_Mia/
+```
 
-## React Compiler
+## Descripción
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+La pagina muestra un landig page con tienda online, para una pizzeria.
 
-## Expanding the ESLint configuration
+## Tecnologías Utilizadas
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- HTML5
+- CSS3
+- JS
+- React + Vite
+
+## Estructura del Proyecto
+
+```text
+├─ public
+│   ├── favicon.svg
+│   └── icons.svg
+├─ src
+│   ├── assets
+│   │    ├── Header.jpg
+│   │    ├── hero.png
+│   │    ├── react.svg
+│   │    └── vite.svg
+│   ├── components
+│   │    ├── Cardpizza.jsx
+│   │    ├── Footer.jsx
+│   │    ├── Header.jsx
+│   │    ├── Home.jsx
+│   │    └── Navbar.jsx
+│   ├── App.css
+│   ├── App.jsx
+│   ├── index.css
+│   └── main.jsx
+│
+├── .gitignore
+├── eslint.config.js
+├── index.html
+├── package-lock.json
+├── package.json
+├── README.md
+└── vite.config.js
+```
+
+## Características
+
+- Layout principal contruido con Flexbox.
+- Header donde crear/ingresar a tu cuenta, como comprar.
+- Sección principal con los productos disponibles.
+
+## Autor
+
+Proyecto creado por Diego Trejos para DesafioLatam
