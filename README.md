@@ -12,6 +12,7 @@ https://trejosd.github.io/Mamma_Mia/
 
 - La pagina muestra un landig page con tienda online, para una pizzeria.
   **Menu de navegacion cambia dimanicamente, al hacer click en login o logout.**
+- El proyecto contempla tambien 2 secciones de Registro y Login, con sus respectivas validaciones.
 
 ## Tecnologías Utilizadas
 
@@ -37,6 +38,8 @@ https://trejosd.github.io/Mamma_Mia/
 │   │    ├── Footer.jsx
 │   │    ├── Header.jsx
 │   │    ├── Home.jsx
+│   │    ├── Login.jsx
+│   │    ├── Register.jsx
 │   │    └── Navbar.jsx
 │   ├── App.css
 │   ├── App.jsx
@@ -57,6 +60,8 @@ https://trejosd.github.io/Mamma_Mia/
 - Layout principal contruido con Flexbox.
 - Header donde crear/ingresar a tu cuenta, como comprar.
 - Sección principal con los productos disponibles.
+- Seccion de Registro, donde crear usuario y contraseña.
+- Seccion de login, donde iniciar seccion. Con sus respectivas validaciones.
 
 ## Autor
 
