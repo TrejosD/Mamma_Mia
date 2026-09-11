@@ -11,7 +11,9 @@ function App() {
     <>
     <Navbar/>
     <Home/>
+    <hr/>
     <Register/>
+    <hr/>
     <Login/>
     <Footer/>
     </>
