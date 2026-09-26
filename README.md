@@ -1,6 +1,7 @@
 # Landing Page, Pizzeria Mamma Mia - React + Vite
 
 Proyecto estatico, creado con React + Vite, landing page para una pizzeria.
+**Cambios para el hito#3 se realizaron en el branch "hito#3"**
 
 ## Acceso
 
