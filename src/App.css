@@ -91,6 +91,15 @@
   color: white;
 }
 
+.section{
+  display: flex;
+  justify-content: center;
+}
+
+.pizzaCard{
+  margin: 20px 0;
+}
+
 /* Footer */
 .footer{
   padding: 24px;

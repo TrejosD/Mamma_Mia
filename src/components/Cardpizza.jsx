@@ -6,7 +6,7 @@ function Cardpizza({img, name, ingredientes, precio}){
             <div>
                 <h3>Ingredientes:</h3>
                 <ul>
-                    {ingredientes.map(ing=><li>{ing + ', '}</li>)}
+                    {ingredientes.map((ing, idx)=><li key={idx}>{ing + ', '}</li>)}
                 </ul>
             </div>
             <h2>Precio: ${precio}</h2>
