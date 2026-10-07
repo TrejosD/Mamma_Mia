@@ -20,6 +20,15 @@
   gap: 15px;
 }
 
+.menu-item{
+  list-style: none;
+  text-decoration: none;
+}
+
+.menu-item:visited{
+  color: white;
+}
+
 .menu-item:hover{
   cursor: pointer;
   color: #e9e184;
@@ -94,6 +103,7 @@
 .section{
   display: flex;
   justify-content: center;
+  margin: 50px 0;
 }
 
 .pizzaCard{
