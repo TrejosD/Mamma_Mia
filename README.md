@@ -1,7 +1,8 @@
 # Landing Page, Pizzeria Mamma Mia - React + Vite
 
 Proyecto estatico, creado con React + Vite, landing page para una pizzeria.
-Este proyecto muestra la parte #4 del hito de React para desafio_latam.
+Este proyecto muestra la parte #5 del hito de React para desafio_latam.
+Se incluye navegacion completa con React-Router.
 
 ## Acceso
 
@@ -36,14 +37,17 @@ https://trejosd.github.io/Mamma_Mia/
 │   │    └── vite.svg
 │   ├── components
 │   │    ├── Cardpizza.jsx
-│   │    ├── Cart.jsx
 │   │    ├── Footer.jsx
 │   │    ├── Header.jsx
+│   │    └── Navbar.jsx
+│   ├── pages
+│   │    ├── Pizza.jsx
+│   │    ├── Cart.jsx
 │   │    ├── Home.jsx
 │   │    ├── Login.jsx
 │   │    ├── Register.jsx
-│   │    ├── Pizza.jsx
-│   │    └── Navbar.jsx
+│   │    ├── Profile.jsx
+│   │    └── NotFound.jsx
 │   ├── App.css
 │   ├── App.jsx
 │   ├── index.css
@@ -63,8 +67,9 @@ https://trejosd.github.io/Mamma_Mia/
 - Layout principal contruido con Flexbox.
 - Header donde crear/ingresar a tu cuenta, como comprar.
 - Sección principal con los productos disponibles.
-- Seccion de Registro, donde crear usuario y contraseña.
-- Seccion de login, donde iniciar seccion. Con sus respectivas validaciones.
+- Sección de Registro, donde crear usuario y contraseña.
+- Sección de login, donde iniciar seccion. Con sus respectivas validaciones.
+- Sección de carrito y pagina para visualizar cada pizza individual, aun en desarrollo.
 
 ## Autor
 
