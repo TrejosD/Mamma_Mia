@@ -1,28 +1,9 @@
-import { pizzaCart } from "../data/pizzas";
-import { useState } from "react";
+import { CartContext } from "../contexts/CartContext";
+import { useContext} from "react";
 
 export default function Cart() {
-  const [cart, setCart] = useState(pizzaCart);
-  let total = 0;
-  function updateValue(pizza, value) {
-    const newCart = [...cart];
-    const index = newCart.findIndex((item) => item.id === pizza.id);
-    const findedPizza = newCart[index];
-    findedPizza.count = newCart[index].count + value;
-    setCart(newCart);
-    if (cart[index].count == 0) {
-      removeItem(findedPizza);
-    }
-  }
-
-  function removeItem(pizza) {
-    const filteredList = cart.filter((item) => item.id !== pizza.id);
-    setCart(filteredList);
-  }
-
-  cart.forEach((producto) => {
-    total += producto.price * producto.count;
-  });
+  const {cart, totalCart, increaseCount, decreaseCount, removeProduct} = useContext(CartContext);
+   
 
   return (
     <>
@@ -36,19 +17,19 @@ export default function Cart() {
                 <img src={pizza.img} alt="pizza image" /> <p>{pizza.name}</p>{" "}
                 <p>$ {pizza.price}</p>
                 <button
-                  onClick={() => updateValue(pizza, -1)}
+                  onClick={() => pizza.count ==1 ? removeProduct(pizza.id) : decreaseCount(pizza.id)}
                   disabled={pizza.count == 0}
                 >
                   -
                 </button>
                 <div>{pizza.count}</div>
-                <button onClick={() => updateValue(pizza, 1)}>+</button>
+                <button onClick={() => increaseCount(pizza.id)}>+</button>
               </div>
             );
           })}
         </section>
         <div className="totalStyle">
-          <p>Total: $ {total.toLocaleString()}</p>
+          <p>Total: $ {totalCart}</p>
           <button className="btn btn-dark">Pagar</button>
         </div>
       </main>

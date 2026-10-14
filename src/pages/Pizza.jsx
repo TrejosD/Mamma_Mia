@@ -11,7 +11,7 @@ export default function Pizza() {
     
     useEffect(()=>{
         async function getPizza(){
-            const resp = await fetch('http://localhost:5000/api/pizzas/p001');
+            const resp = await fetch('http://localhost:4000/api/pizzas/p001');
             const data = await resp.json();
             setPizza(data);
         }

@@ -1,6 +1,10 @@
+import { useContext } from "react"
 import { Link } from "react-router-dom"
+import { CartContext } from "../contexts/CartContext"
 
-function Cardpizza({img, name, ingredientes, precio}){
+function Cardpizza({img, name, ingredientes, precio, id}){
+
+    const {addToCart} = useContext(CartContext);
     return(
             
         <div className="card">
@@ -17,7 +21,8 @@ function Cardpizza({img, name, ingredientes, precio}){
                 <Link to='/pizza/p001/' className="menu-item">
                 <button>Ver mas</button>
                 </Link>
-            <button className="add">Añadir</button></span>
+            </span>
+            <button className="add" onClick={()=>addToCart({id: id, name: name, img:img, price: precio, count:1})}>Añadir</button>
         </div>
             
     )

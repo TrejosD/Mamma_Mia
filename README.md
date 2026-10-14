@@ -15,6 +15,7 @@ https://trejosd.github.io/Mamma_Mia/
 - La pagina muestra un landig page con tienda online, para una pizzeria.
 - Se obtienen los recursos para cada pizza, de manera dinamica gracias a un API-local.
 - El proyecto contempla tambien 2 secciones de Registro y Login, con sus respectivas validaciones.
+- Desarrollado un carrito completamente funcional, mostrando el total, como agregar o eliminar productos.
 
 ## Tecnologías Utilizadas
 
@@ -48,6 +49,9 @@ https://trejosd.github.io/Mamma_Mia/
 │   │    ├── Register.jsx
 │   │    ├── Profile.jsx
 │   │    └── NotFound.jsx
+│   ├── contexts
+│   │    ├── CartContext.jsx
+│   │    └── PizzasContext.jsx
 │   ├── App.css
 │   ├── App.jsx
 │   ├── index.css
@@ -69,7 +73,7 @@ https://trejosd.github.io/Mamma_Mia/
 - Sección principal con los productos disponibles.
 - Sección de Registro, donde crear usuario y contraseña.
 - Sección de login, donde iniciar seccion. Con sus respectivas validaciones.
-- Sección de carrito y pagina para visualizar cada pizza individual, aun en desarrollo.
+- Sección de carrito desarrollo en funcionamiento.
 
 ## Autor
 

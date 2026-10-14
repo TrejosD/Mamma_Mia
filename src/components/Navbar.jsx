@@ -1,10 +1,12 @@
 // import { useState } from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { CartContext } from "../contexts/CartContext";
 
 function Navbar(){
     // const [loged, setLoged] = useState(false);
     // const togleTokenValue = ()=> setLoged(!loged);
-    const total = 25000
+    const {totalCart} = useContext(CartContext);
     return(
         <nav className="nav">
             <h3>Pizzeria Mamma Mia!!</h3>
@@ -17,7 +19,7 @@ function Navbar(){
                 </ul>
             </div>
             <Link to='/cart' className="menu-item">
-            <div>🛒 Total: ${total.toLocaleString()}</div>
+            <div>🛒 Total: ${totalCart}</div>
             </Link>
         </nav>
     )
