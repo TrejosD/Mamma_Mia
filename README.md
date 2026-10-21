@@ -2,7 +2,7 @@
 
 Proyecto estatico, creado con React + Vite, landing page para una pizzeria.
 Este proyecto muestra la parte #5 del hito de React para desafio_latam.
-Se incluye navegacion completa con React-Router.
+Se incluye navegacion completa y rutas protegidas con React-Router.
 
 ## Acceso
 
@@ -74,6 +74,7 @@ https://trejosd.github.io/Mamma_Mia/
 - Sección de Registro, donde crear usuario y contraseña.
 - Sección de login, donde iniciar seccion. Con sus respectivas validaciones.
 - Sección de carrito desarrollo en funcionamiento.
+- Rutas protegidas con React Router, JWT en desarrollo.
 
 ## Autor
 

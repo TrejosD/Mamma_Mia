@@ -1,29 +1,25 @@
 import {useState, useEffect} from 'react'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { useParams } from 'react-router-dom';
 
 export default function Pizza() {
     const [pizza, setPizza] = useState('');
-    
-    function logs(){
-        console.log(pizza);
-    }
-    
+    const {id} = useParams();
+        
     useEffect(()=>{
         async function getPizza(){
-            const resp = await fetch('http://localhost:5000/api/pizzas/p001');
+            const resp = await fetch(`http://localhost:5000/api/pizzas/${id}`);
             const data = await resp.json();
             setPizza(data);
         }
         getPizza();
     },[])
 
-    if(!pizza){
-        return (
-            <p>Cargando datos...</p>
-        )
-    }
-  return (
+      return (
+        <>
+    {
+      pizza ? 
     <section className='section'>
       <Card className='pizzaCard' style={{ width: '18rem' }}>
       <Card.Img variant="top" src={pizza.img} />
@@ -40,9 +36,12 @@ export default function Pizza() {
           {pizza.desc}
         </Card.Text>
         <Card.Text>$ {pizza.price}</Card.Text>
-        <Button variant="secondary" onClick={logs}>Add to cart</Button>
+        <Button variant="secondary">Add to cart</Button>
       </Card.Body>
     </Card>
     </section>
+      : <p>Cargando datos...</p>
+    }
+    </>
   );
 }

@@ -1,8 +1,10 @@
 import { CartContext } from "../contexts/CartContext";
 import { useContext} from "react";
+import {AuthenticationContext} from '../contexts/AuthenticationContext';
 
 export default function Cart() {
   const {cart, totalCart, increaseCount, decreaseCount, removeProduct} = useContext(CartContext);
+  const {token} = useContext(AuthenticationContext);
    
 
   return (
@@ -30,7 +32,7 @@ export default function Cart() {
         </section>
         <div className="totalStyle">
           <p>Total: $ {totalCart}</p>
-          <button className="btn btn-dark">Pagar</button>
+          <button disabled={!token} className="btn btn-dark">Pagar</button>
         </div>
       </main>
     </>

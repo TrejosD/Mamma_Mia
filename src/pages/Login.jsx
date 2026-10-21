@@ -1,11 +1,15 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import {AuthenticationContext} from '../contexts/AuthenticationContext'
 
 export default function Login(){
     const [errorEmptyNombre,setErrorEmptyNombre] = useState(false);
         const [errorEmptyPassword,setErrorEmptyPassword] = useState(false);
         const [errorPassLength,setPassLength] = useState(false);
         const [nombre, setNombre] = useState('');
-        const [password, setPassword] = useState('');        
+        const [password, setPassword] = useState('');  
+        const navigate = useNavigate();
+        const {token, setToken} = useContext(AuthenticationContext); 
     
         function submitForm(e){
             e.preventDefault();
@@ -23,9 +27,12 @@ export default function Login(){
             setErrorEmptyPassword(false)
             setErrorEmptyNombre(false)
             success()
+            navigate('/');
         }
-    
+        
         function success(){
+            setToken(true);
+            console.log(token);
             alert('Login Exitoso. Bienvenid@! ' + nombre);
         }
         return(
