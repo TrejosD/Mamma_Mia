@@ -23,6 +23,7 @@
 .menu-item{
   list-style: none;
   text-decoration: none;
+  color: white;
 }
 
 .menu-item:visited{

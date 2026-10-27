@@ -23,3 +23,8 @@
 .error{
     color: red;
 }
+
+.menu-button{
+   background-color: transparent;
+   border: none;
+}

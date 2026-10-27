@@ -50,8 +50,12 @@ const CartProvider = ({children})=>{
         setCart(filteredList);
     }
 
+    function cleanCart(){
+        setCart([]);
+    }
+
     return(
-        <CartContext.Provider value={{addToCart, totalCart, increaseCount, decreaseCount, removeProduct, cart}}>
+        <CartContext.Provider value={{addToCart, totalCart, increaseCount, decreaseCount, removeProduct, cart, cleanCart}}>
             {children}
         </CartContext.Provider>
     )

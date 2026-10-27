@@ -1,16 +1,16 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
+import { UserContext } from "../contexts/UserContext";
 export default function Register(){
-    const [errorEmptyNombre,setErrorEmptyNombre] = useState(false);
+    const [errorEmptyEmail,setErrorEmptyEmail] = useState(false);
     const [errorEmptyPassword,setErrorEmptyPassword] = useState(false);
     const [errorPassNoCoincide,setPassNoCoincide] = useState(false);
     const [errorPassLength,setPassLength] = useState(false);
-    const [nombre, setNombre] = useState('');
-    const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
+    const {handleAuthenticationRegister, email, setEmail, password, setPassword, token} = useContext(UserContext);
 
-    function submitForm(e){
+    async function submitForm (e){
         e.preventDefault();
-        if(!nombre.trim()){
+        if(!email.trim()){
             setErrorEmptyNombre(true)
             return
         }else if(!password.trim() || !confirmPassword.trim()){ 
@@ -26,12 +26,14 @@ export default function Register(){
         setPassLength(false)
         setConfirmPassword(false)
         setErrorEmptyPassword(false)
-        setErrorEmptyNombre(false)
+        setErrorEmptyEmail(false)
+        await handleAuthenticationRegister(e)
         success()
+
     }
 
     function success(){
-        alert('Todo correcto. Bienvenid@! ' + nombre);
+        alert('Todo correcto. Bienvenid@! ' + email);
     }
     return(
         <>
@@ -39,10 +41,10 @@ export default function Register(){
         <h2>Registro</h2>
             <form action="" className="form" onSubmit={submitForm}> 
             <div className="form-group">
-                <label >Nombre</label>
-                <input type="text" name="nombre" className="form-control" value={nombre} onChange={(e)=>{setNombre(e.target.value), setErrorEmptyNombre(false)}}/>
+                <label >Email</label>
+                <input type="email" name="email" className="form-control" value={email} onChange={(e)=>{setEmail(e.target.value), setErrorEmptyEmail(false)}}/>
             </div>
-            {errorEmptyNombre ? <p className="error">Nombre es requerido</p> : null}
+            {errorEmptyEmail ? <p className="error">Email es requerido</p> : null}
             <div className="form-group">
                 <label >Contraseña</label>
                 <input type="password" name="password" className="form-control" value={password} onChange={(e)=>{setPassword(e.target.value), setErrorEmptyPassword(false), setPassNoCoincide(false), setPassLength(false)}}/>

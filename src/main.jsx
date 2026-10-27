@@ -6,11 +6,12 @@ import App from './App.jsx'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import CartProvider from './contexts/CartContext.jsx'
 import PizzasProvider from './contexts/PizzasContext.jsx'
-import AuthenticationProvider from './contexts/AuthenticationContext.jsx'
+import UserProvider from './contexts/UserContext.jsx'
+
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <AuthenticationProvider>
+    <UserProvider>
     <CartProvider>
     <PizzasProvider>
     <BrowserRouter>
@@ -18,6 +19,6 @@ createRoot(document.getElementById('root')).render(
     </BrowserRouter>
     </PizzasProvider>
     </CartProvider>
-    </AuthenticationProvider>
+    </UserProvider>
   </StrictMode>,
 )

@@ -1,10 +1,31 @@
 import { CartContext } from "../contexts/CartContext";
 import { useContext} from "react";
-import {AuthenticationContext} from '../contexts/AuthenticationContext';
+import {UserContext} from '../contexts/UserContext';
 
 export default function Cart() {
-  const {cart, totalCart, increaseCount, decreaseCount, removeProduct} = useContext(CartContext);
-  const {token} = useContext(AuthenticationContext);
+  const {cart, totalCart, cleanCart, increaseCount, decreaseCount, removeProduct} = useContext(CartContext);
+  const {token} = useContext(UserContext);
+
+  const handlePay = async (e)=>{
+    e.preventDefault();
+    const userToken = localStorage.getItem('token');
+    try{
+      await fetch('http://localhost:4000/api/checkouts',{
+        method: 'POST',
+        headers:{
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${userToken}`,
+        },
+        body: JSON.stringify({
+          cart: cart
+        })
+      });
+    }catch(e){
+      console.log(e);
+    }
+    cleanCart();
+    alert('Compra realizada con exito');
+  }
    
 
   return (
@@ -32,7 +53,7 @@ export default function Cart() {
         </section>
         <div className="totalStyle">
           <p>Total: $ {totalCart}</p>
-          <button disabled={!token} className="btn btn-dark">Pagar</button>
+          <button disabled={cart == 0} onClick={handlePay} className="btn btn-dark">Pagar</button>
         </div>
       </main>
     </>

@@ -1,19 +1,18 @@
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import {AuthenticationContext} from '../contexts/AuthenticationContext'
+import {UserContext} from "../contexts/UserContext"
+
 
 export default function Login(){
-    const [errorEmptyNombre,setErrorEmptyNombre] = useState(false);
+    const [errorEmptyEmail,setErrorEmptyEmail] = useState(false);
         const [errorEmptyPassword,setErrorEmptyPassword] = useState(false);
         const [errorPassLength,setPassLength] = useState(false);
-        const [nombre, setNombre] = useState('');
-        const [password, setPassword] = useState('');  
         const navigate = useNavigate();
-        const {token, setToken} = useContext(AuthenticationContext); 
+        const {email, setEmail, password, setPassword, handleAuthenticationLogin} = useContext(UserContext); 
     
-        function submitForm(e){
+        const handleSubmit = async (e)=>{
             e.preventDefault();
-            if(!nombre.trim()){
+            if(!email.trim()){
                 setErrorEmptyNombre(true)
                 return
             }else if(!password.trim()){ 
@@ -25,26 +24,24 @@ export default function Login(){
             }
             setPassLength(false)
             setErrorEmptyPassword(false)
-            setErrorEmptyNombre(false)
+            setErrorEmptyEmail(false)
+            await handleAuthenticationLogin(e);
             success()
-            navigate('/');
         }
-        
+
         function success(){
-            setToken(true);
-            console.log(token);
-            alert('Login Exitoso. Bienvenid@! ' + nombre);
+            alert('Login Exitoso. Bienvenid@! ' + email);
         }
         return(
             <>
             <div className="container">
             <h2>Login</h2>
-                <form action="" className="form" onSubmit={submitForm}> 
+                <form action="" className="form" onSubmit={handleSubmit}> 
                 <div className="form-group">
-                    <label >Nombre</label>
-                    <input type="text" name="nombre" className="form-control" value={nombre} onChange={(e)=>{setNombre(e.target.value), setErrorEmptyNombre(false)}}/>
+                    <label >Email</label>
+                    <input type="text" name="email" className="form-control" value={email} onChange={(e)=>{setEmail(e.target.value), setErrorEmptyEmail(false)}}/>
                 </div>
-                {errorEmptyNombre ? <p className="error">Nombre es requerido</p> : null}
+                {errorEmptyEmail ? <p className="error">Email es requerido</p> : null}
                 <div className="form-group">
                     <label >Contraseña</label>
                     <input type="password" name="password" className="form-control" value={password} onChange={(e)=>{setPassword(e.target.value), setErrorEmptyPassword(false), setPassLength(false)}}/>
