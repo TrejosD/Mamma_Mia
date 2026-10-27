@@ -1,8 +1,8 @@
 # Landing Page, Pizzeria Mamma Mia - React + Vite
 
 Proyecto estatico, creado con React + Vite, landing page para una pizzeria.
-Este proyecto muestra la parte #5 del hito de React para desafio_latam.
-Se incluye navegacion completa y rutas protegidas con React-Router.
+Proyecto terminado segun los estandares de desafio_latam para React. Se implementan, protección de rutas, registro, login y carrito de compras funcional.
+Se consume un backend local, se permite registrar usuarios, verificar autorizacion y hacer el login de los mismos.
 
 ## Acceso
 

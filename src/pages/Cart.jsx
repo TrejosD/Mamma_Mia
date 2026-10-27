@@ -10,7 +10,7 @@ export default function Cart() {
     e.preventDefault();
     const userToken = localStorage.getItem('token');
     try{
-      await fetch('http://localhost:4000/api/checkouts',{
+      await fetch('http://localhost:5000/api/checkouts',{
         method: 'POST',
         headers:{
           "Content-Type": "application/json",
